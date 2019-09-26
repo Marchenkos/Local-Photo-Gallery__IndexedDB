@@ -1,0 +1,10 @@
+.gallery-management {
+    display: flex;
+}
+.gallery-management .gallery-management__button {
+    font-size: 40px;
+    border: none;
+    background: #ffffff;
+    color: #686868;
+    margin-left:15px;
+}

@@ -1,10 +1,13 @@
 window.onload = function() {
-    var input = document.getElementById("file-upload");
-    var preview = document.querySelector('.preview');
+    let input = document.getElementById("file-upload");
+    let preview = document.querySelector('.preview');
+    console.log(preview);
     
     input.addEventListener("change", updateImageDisplay);
-    
+
     function updateImageDisplay() {
+        console.log("mmmmm");
+
         let preview = document.getElementsByClassName("preview")[0];
     
         while(preview.firstChild) {
@@ -20,10 +23,11 @@ window.onload = function() {
           warning.textContent = "No files currently selected for upload";
           preview.appendChild(warning);
         } else {
-            var image = document.createElement('img');
+            let image = document.createElement('img');
             image.src = window.URL.createObjectURL(currentFile[0]);
             image.style.maxWidth = "inherit";
             preview.appendChild(image);
+            console.log(preview);
         }
     }
 }

@@ -1,0 +1,71 @@
+.editing-form {
+    width: 600px;
+    height: auto;
+    background: white;
+    position: absolute;
+    top: 300px;
+    display: none;
+    left: 30%;
+    text-align: center;
+    padding: 40px 0;
+    /* box-sizing: border-box; */
+}
+.editing-form .editing-form__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: Literata Book;
+}
+.editing-form .editing-form__information {
+    width: 70%;
+    height: 30px;
+    margin: 20px auto 0;
+    /* margin-bottom: 20px; */
+    padding-left: 10px;
+}
+.editing-form .editing-form__information::placeholder{
+    font-family: Literata Book;
+    font-size: 17px;
+}
+.editing-form .editing-form__information.editing-form__information--description{
+    padding-top:6px;
+    height: 80px;
+}
+.upload-input{
+    opacity: 0;
+}
+.editing-form .editing-form__upload-picture {
+
+height: 33px;
+
+padding: 9px 8px 0 8px;
+
+background: rgb(65, 65, 65);
+
+font-size: 19px;
+
+font-family: Literata Book;
+
+width: 200px;
+
+color: rgb(255, 255, 255);
+
+margin: 20px auto;
+}
+.preview {
+    max-width: 100px;
+    margin: 0 auto;
+}
+
+.editing-form .editing-form__submit-post{
+    font-size: 35px;
+    color:rgb(71, 71, 71);
+    margin: 50px 0 0 500px;
+    border: none;
+    background: none;
+}
+.editing-form .editing-form__close-form{
+    color: rgb(94, 94, 94);
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}

@@ -1,0 +1,28 @@
+.gallery__item {
+    position: relative;
+    max-width: 440px;
+    margin-top: 40px;
+    height: 500px;
+    overflow: hidden;
+}
+.item__picture{
+    max-width: 420px;
+    opacity: 1;
+}
+
+.item__description {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    height: inherit;
+    font-size: 20px;
+    top: 16px;
+    left: 10px;
+    overflow: scroll;
+}
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

@@ -10,7 +10,11 @@
         <link rel="stylesheet" type="text/css" href="style/reset.css" />
         <link rel="stylesheet" type="text/css" href="style/fonts.css" />
         <link rel="stylesheet" type="text/css" href="style/body.css" />
+        <link rel="stylesheet" type="text/css" href="style/gallery.css" />
+        <link rel="stylesheet" type="text/css" href="style/editing-form.css" />
 
+        <script src="onclick.js"></script>
+        <script src="uploadPicture.js"></script>
     </head>
     <body>
         <header class="header">
@@ -19,15 +23,100 @@
             </div>
             <div class="header__editing">
                 <div class="gallery-management">
-                    <button class="icon-plus gallery-management__button gallery-management__button-add-button"></button>
+                    <button class="icon-plus gallery-management__button gallery-management__button-add-button" onclick="addPost()"></button>
                     <button class="icon-calendar gallery-management__button gallery-management__button--sort-button"></button>
                     <button class="icon-bin gallery-management__button gallery-management__button--clear-button"></button>
                 </div>
             </div>
         </header>
         <main class="main">
-            <section class="gallery">
-                <div class="gallery__item"></div>
+            <section class="main__listOfPosts">
+                <div class="gallery">
+                    <div class="gallery__item" id="2" onclick="showDesciption(this.id)">
+                        <img class="item__picture" src="pictures/-kBRWzitLmA.jpg"/>
+                        <div class="item__description">
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                        </div>
+                    </div>
+    
+                    <div class="gallery__item" id="3"  onclick="showDesciption(this.id)">
+                        <img class="item__picture" src="pictures/MNwMhhECHxw.jpg"/>
+                        <div class="item__description">
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                        </div>
+                    </div>
+                    <div class="gallery__item" id="4"  onclick="showDesciption(this.id)">
+                        <img class="item__picture" src="pictures/dZzcPPGR6DI.jpg"/>
+                        <div class="item__description">
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                                    Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                                    Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                        </div>
+                    </div>
+                    <div class="gallery__item" id="1" onclick="showDesciption(this.id)">
+                        <img class="item__picture" src="pictures/dZzcPPGR6DI.jpg"/>
+                        <div class="item__description">
+                            <p>Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.</p>
+                        </div>
+                    </div>
+                    <div class="gallery__item" id="2" onclick="showDesciption(this.id)">
+                        <img class="item__picture" src="pictures/-kBRWzitLmA.jpg"/>
+                        <div class="item__description">
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                        </div>
+                    </div>
+    
+                    <div class="gallery__item" id="3"  onclick="showDesciption(this.id)">
+                        <img class="item__picture" src="pictures/MNwMhhECHxw.jpg"/>
+                        <div class="item__description">
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                        </div>
+                    </div>
+                    <div class="gallery__item" id="4"  onclick="showDesciption(this.id)">
+                        <img class="item__picture" src="pictures/dZzcPPGR6DI.jpg"/>
+                        <div class="item__description">
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                                    Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                                    Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                        </div>
+                    </div>
+                    <div class="gallery__item" id="1" onclick="showDesciption(this.id)">
+                        <img class="item__picture" src="pictures/dZzcPPGR6DI.jpg"/>
+                        <div class="item__description">
+                            <p>Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.
+                            Now let's use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+<!-- Все плохо с BEM -->
+            <section class="main__list-editing">
+                <form class="editing-form">
+                    <div class="icon-cross editing-form__close-form" onclick="closeForm()"></div>
+
+                    <h1 class="editing-form__title">Add new post</h1>
+                    <div class="editing-form__upload-picture">
+                        <label class="upload-description" for="file-upload">Choose picture to upload</label>
+                        <input class="upload-input" type="file" id="file-upload" name="file-upload">
+                    </div>
+                    <div class="preview">
+                    </div>
+                    <input class="editing-form__information editing-form__information--author" type="text" placeholder="Your name">
+                    <textarea class="editing-form__information editing-form__information--description" placeholder="Comment"></textarea>
+                    <button type="submit" class="icon-checkmark editing-form__submit-post"></button>
+                </form>
+
             </section>
         </main>
     </body>

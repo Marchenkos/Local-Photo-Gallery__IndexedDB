@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?58gk90');
-  src:  url('fonts/icomoon.eot?58gk90#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?58gk90') format('truetype'),
-    url('fonts/icomoon.woff?58gk90') format('woff'),
-    url('fonts/icomoon.svg?58gk90#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?x77nel');
+  src:  url('fonts/icomoon.eot?x77nel#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?x77nel') format('truetype'),
+    url('fonts/icomoon.woff?x77nel') format('woff'),
+    url('fonts/icomoon.svg?x77nel#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -28,6 +28,9 @@
 .icon-calendar:before {
   content: "\e953";
 }
+.icon-upload:before {
+  content: "\e961";
+}
 .icon-zoom-in:before {
   content: "\e987";
 }
@@ -37,6 +40,15 @@
 .icon-bin:before {
   content: "\e9ac";
 }
+.icon-cloud-upload:before {
+  content: "\e9c3";
+}
+.icon-upload2:before {
+  content: "\e9c6";
+}
+.icon-upload3:before {
+  content: "\e9c8";
+}
 .icon-plus:before {
   content: "\ea0a";
 }
@@ -45,4 +57,7 @@
 }
 .icon-cross:before {
   content: "\ea0f";
+}
+.icon-checkmark:before {
+  content: "\ea10";
 }

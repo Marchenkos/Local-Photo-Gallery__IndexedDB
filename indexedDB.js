@@ -29,14 +29,15 @@ let gallery = document.querySelector(".gallery");
 })();
 
 function addData(e) {
+    let input = document.getElementById("file-upload");
+    let currentFile = input.files;
+
     let author = document.querySelector(".editing-form__information--author");
     let description = document.querySelector(".editing-form__information--description");
-    let preview = document.querySelector(".preview");
-    let img = preview.getElementsByTagName("img")[0];
 
     e.preventDefault();
-    let oMyBlob = new Blob(img, {type : 'image/jpeg'}); // the blob
-    let newPost = { author: author.value, link: img.src, description: description.value};
+    let oMyBlob = new Blob(currentFile, {type : 'image/jpeg'}); // the blob
+    let newPost = { author: author.value, link: oMyBlob, description: description.value};
     let transaction = db.transaction(["gallery_db"], "readwrite");
     let objectStore = transaction.objectStore("gallery_db");
   
@@ -76,10 +77,10 @@ function displayPosts() {
 
             post.classList.add("gallery__item");
             image.classList.add("item__picture");
-            description.classList.add("item__description")
-
-            image.src = cursor.value.link;
-
+            description.classList.add("item__description");
+            console.log(cursor.value.link);
+            let imgURL = window.URL.createObjectURL(cursor.value.link);
+            image.src = imgURL;
             post.setAttribute("id", cursor.value.id);
             author.textContent = cursor.value.author;
             description.textContent = cursor.value.description;

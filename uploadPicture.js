@@ -21,6 +21,8 @@ function updateImageDisplay() {
     } else {
         let image = document.createElement('img');
         console.log(window.URL.createObjectURL(currentFile[0]));
+        console.log(input.value);
+
         image.src = window.URL.createObjectURL(currentFile[0]);
         image.style.maxWidth = "inherit";
         preview.appendChild(image);

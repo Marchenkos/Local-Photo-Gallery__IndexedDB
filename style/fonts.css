@@ -3,3 +3,9 @@
     font-family: icomoon;
     src: url(../fonts/icomoon/icomoon.ttf);
 }
+
+@font-face
+{
+    font-family: icomoon_aroow;
+    src: url(../fonts/icomoon_arrow/fonts/icomoon.ttf);
+}

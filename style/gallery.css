@@ -26,3 +26,12 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.item__checking {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    zoom:2.5;
+    top: 5px;
+    left: 5px;
+}

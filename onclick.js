@@ -13,11 +13,10 @@ function showDesciption(id) {
 }
 
 function addPost() {
-    let form = document.getElementsByClassName("editing-form");
-    form[0].style.display = "flex";
-    form[0].style.flexDirection = "column";
+    let form = document.querySelector(".main__list-editing");
+    form.style.display = "block";
 }
 function closeForm() {
-    let form = document.getElementsByClassName("editing-form");
-    form[0].style.display = "none";
+    let form = document.querySelector(".main__list-editing");
+    form.style.display = "none";
 }

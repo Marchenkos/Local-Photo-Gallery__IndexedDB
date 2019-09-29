@@ -1,11 +1,13 @@
 .editing-form {
-    width: 600px;
-    height: auto;
-    background: white;
+    width: 550px;
+    /* height: auto; */
     position: absolute;
-    top: 300px;
-    display: none;
-    left: 30%;
+    z-index: 1;
+    top: 15px;
+    /* left: -46px; */
+    display: flex;
+    flex-direction: column;
+    background: white;
     text-align: center;
     padding: 40px 0;
     /* box-sizing: border-box; */
@@ -58,14 +60,16 @@ margin: 20px auto;
 
 .editing-form .editing-form__submit-post{
     font-size: 35px;
-    color:rgb(71, 71, 71);
+    color:#a8a8a8;
     margin: 50px 0 0 500px;
     border: none;
+    cursor: pointer;
     background: none;
 }
 .editing-form .editing-form__close-form{
-    color: rgb(94, 94, 94);
+    color: #5e5e5e;
     position: absolute;
     top: 20px;
     right: 30px;
+    cursor: pointer;
 }

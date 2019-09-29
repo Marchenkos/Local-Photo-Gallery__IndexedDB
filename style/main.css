@@ -1,0 +1,7 @@
+.main .main__list-editing {
+    position: fixed;
+    top: 100px;
+    margin: 0 auto;
+    display: none;
+    left: 29%;
+}

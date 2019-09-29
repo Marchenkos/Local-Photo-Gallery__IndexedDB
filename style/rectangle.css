@@ -1,0 +1,8 @@
+.rectangle {
+    background: #414141;
+    transform: rotate(45deg);
+    width: 450px;
+    margin-left: 43px;
+    margin-top: 15px;
+    height: 450px;
+}

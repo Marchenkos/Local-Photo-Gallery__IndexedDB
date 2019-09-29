@@ -5,15 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Gallery</title>
         <link rel="stylesheet" type="text/css" href="fonts/icomoon/style.css" />
+        <link rel="stylesheet" type="text/css" href="fonts/icomoon_arrow/style.css" />
         <link rel="stylesheet" type="text/css" href="style/header.css" />
+        <link rel="stylesheet" type="text/css" href="style/main.css" />
         <link rel="stylesheet" type="text/css" href="style/gallery-management.css" />
         <link rel="stylesheet" type="text/css" href="style/reset.css" />
+        <link rel="stylesheet" type="text/css" href="style/rectangle.css" />
         <link rel="stylesheet" type="text/css" href="style/fonts.css" />
         <link rel="stylesheet" type="text/css" href="style/body.css" />
         <link rel="stylesheet" type="text/css" href="style/gallery.css" />
         <link rel="stylesheet" type="text/css" href="style/editing-form.css" />
-
-        
     </head>
     <body>
         <header class="header">
@@ -24,7 +25,12 @@
                 <div class="gallery-management">
                     <button class="icon-plus gallery-management__button gallery-management__button-add-button" onclick="addPost()"></button>
                     <button class="icon-calendar gallery-management__button gallery-management__button--sort-button"></button>
-                    <button class="icon-bin gallery-management__button gallery-management__button--clear-button"></button>
+                    <button class="icon-bin gallery-management__button gallery-management__button--delete-button" onclick="openSetOfButtons()"></button>
+
+                    <div class="gallery-management__delete-options">
+                        <button class="option option--delete-selected" onclick="deletePost()">Selected</button>
+                        <button class="option option--delete-all" onclick="deleteAllPosts()">All</button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -35,6 +41,8 @@
             </section>
 <!-- Все плохо с BEM -->
             <section class="main__list-editing">
+                <div class="rectangle">
+                </div>
                 <form class="editing-form">
                     <div class="icon-cross editing-form__close-form" onclick="closeForm()"></div>
 
@@ -47,13 +55,14 @@
                     </div>
                     <input class="editing-form__information editing-form__information--author" type="text" placeholder="Your name">
                     <textarea class="editing-form__information editing-form__information--description" placeholder="Comment"></textarea>
-                    <button type="submit" class="icon-checkmark editing-form__submit-post"></button>
+                    <button type="submit" class="icon-checkmark editing-form__submit-post" disabled = true></button>
                 </form>
-
             </section>
         </main>
         <script src="onclick.js"></script>
         <script src="uploadPicture.js"></script>
         <script src="indexedDB.js"></script>
+        <script src="openSetOfButtons.js"></script>
+
     </body>
 </html>

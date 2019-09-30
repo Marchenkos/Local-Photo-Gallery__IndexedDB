@@ -34,7 +34,7 @@
     .header .header__editing {
         display: none;
         position: absolute;
-        top: 33px;
+        top: 28px;
         left: 5px;
         background: white;
         width: 406px;
@@ -43,8 +43,8 @@
     .header .header__menu-button {
         display: block;
         z-index: 1;
-        font-size: 25px;
-        color: #4e4e4e;
+        font-size: 32px;
+        color: #686868;
         flex-grow: 0;
     }
 }

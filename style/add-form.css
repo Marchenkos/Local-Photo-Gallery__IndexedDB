@@ -1,46 +1,40 @@
-.editing-form {
+.add-form {
     width: 550px;
     position: absolute;
-    z-index: 1;
-    top: 15px;
-    left: -46px;
     background: white;
     text-align: center;
     padding: 40px 0;
     font-family: Literata Book;
 }
-.editing-form .editing-form__title {
+.add-form .add-form__title {
     font-size: 30px;
 }
-.editing-form .editing-form__information {
+.add-form .add-form__information {
     width: 70%;
     height: 30px;
     margin: 20px auto 0;
     padding-left: 10px;
 }
-.editing-form .editing-form__information::placeholder{
+.add-form .add-form__information::placeholder {
     font-size: 17px;
 }
-.editing-form .editing-form__information.editing-form__information--description{
+.add-form .add-form__information.add-form__information--description{
     padding-top:6px;
     height: 80px;
 }
-.upload-input{
-    opacity: 0;
-}
-.editing-form .editing-form__upload-picture {
+.add-form .add-form__upload-picture {
     padding-top: 15px;
     background: rgb(65, 65, 65);
     font-size: 19px;
-    width: 220px;
+    width: 247px;
     color: rgb(255, 255, 255);
-    margin: 30px auto;
+    margin: 16px auto;
 }
-.preview {
+.add-form .add-form__preview {
     max-width: 100px;
     margin: 0 auto;
 }
-.editing-form .editing-form__submit-post{
+.add-form .add-form__submit-post {
     font-size: 35px;
     color:#a8a8a8;
     margin: 50px 0 0 470px;
@@ -48,7 +42,7 @@
     cursor: pointer;
     background: none;
 }
-.editing-form .editing-form__close-form{
+.add-form .add-form__close-button {
     color: #5e5e5e;
     position: absolute;
     top: 20px;
@@ -57,17 +51,20 @@
     cursor: pointer;
 }
 
-@media (max-width: 840px){
-    .editing-form .editing-form__information {
+@media (max-width: 840px) {
+    .add-form {
+        width: 450px;
+    }
+    .add-form .add-form__information {
         width: 60%;
         height: 50px;
-        margin: 20px auto 0;
+        margin: 32px auto 0;
         padding-left: 10px;
     }
-    .editing-form {
-        width: 500px;
+    .add-form .add-form__submit-post {
+        margin: 50px 0 0 380px;
     }
-    .editing-form .editing-form__submit-post{
-        margin: 50px 0 0 420px;
+    .add-form .add-form__upload-picture {
+        width: 220px;
     }
 }

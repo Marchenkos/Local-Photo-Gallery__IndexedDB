@@ -3,15 +3,24 @@
 }
 .gallery-management .gallery-management__button {
     font-size: 32px;
-    border: none;
-    background: #ffffff;
     color: #686868;
     cursor: pointer;
-    margin-right: 15px;
+    margin-right: 25px;
 }
-.gallery-management .gallery-management__delete-options{
+.gallery-management .gallery-management__button.gallery-management__button--delete-button {
+    margin-right: 0px;
+}
+.gallery-management .gallery-management__delete-options {
     display: none;
 }
-.gallery-management .gallery-management__sort-options{
+.gallery-management .gallery-management__sort-options {
     display: none;
+}
+@media (max-width: 840px){
+    .gallery-management .gallery-management__button {
+        font-size: 25px;
+        color: #686868;
+        cursor: pointer;
+        margin-right: 15px;
+    }
 }

@@ -1,17 +1,14 @@
-.main .main__list-editing {
+.main .main__additing-post {
     position: fixed;
     top: 200px;
+    z-index: 1;
     display: none;
-    left: 35%;
+    left: 50%;
+    margin-left: -271px;
 }
 
-@media (min-width: 840px) and (max-width: 1200px){
-    .main .main__list-editing {
-        left: 27%;
-    }
-}
-@media (max-width: 840px){
-    .main .main__list-editing {
-        left: 20%;
+@media (max-width: 840px) {
+    .main .main__additing-post {
+        margin-left: -227px;
     }
 }

@@ -1,14 +1,15 @@
 .rectangle {
-    background: #414141;
+    background: #484646;
     transform: rotate(45deg);
     width: 450px;
-    margin-left: 5px;
-    margin-top: 15px;
+    position: absolute;
+    margin-left: 47px;
+    margin-top: 21px;
     height: 450px;
 }
 
-@media (max-width: 840px){
+@media (max-width: 840px) {
     .rectangle {
-      display: none;
+        display: none;
     }
 }

@@ -1,6 +1,6 @@
 function openSetOfDeleteButtons(){
     let options = document.querySelector(".gallery-management__delete-options");
-    let checkboxes = document.querySelectorAll(".item__checking");
+    let checkboxes = document.querySelectorAll(".item-content__checking");
     let deleteButton = document.querySelector(".gallery-management__button--delete-button");
 
     if (options.style.display == "none") {
@@ -8,8 +8,10 @@ function openSetOfDeleteButtons(){
             checkboxe.style.display = "block";
         });
         deleteButton.classList.remove("icon-bin");
+        deleteButton.style.marginRight = "0px";
         deleteButton.classList.add("icon-arrow-right");
         options.style.display = "flex";
+        options.style.alignItems = "flex-end";
     } else {
         [].forEach.call(checkboxes, checkboxe => {
             checkboxe.style.display = "none";
@@ -26,11 +28,14 @@ function openSetOfSortButtons() {
 
     if (options.style.display == "none") {
         options.style.display = "flex";
+        options.style.alignItems = "flex-end";
         sortButton.classList.remove("icon-calendar");
+        sortButton.style.marginRight = "0px";
         sortButton.classList.add("icon-arrow-right");
     } else {
         options.style.display = "none";
         sortButton.classList.add("icon-calendar");
+        sortButton.style.marginRight = "15px";
         sortButton.classList.remove("icon-arrow-right");
     }
 }

@@ -3,75 +3,87 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Gallery</title>
-        <link rel="stylesheet" type="text/css" href="fonts/icomoon/style.css" />
-        <link rel="stylesheet" type="text/css" href="fonts/icomoon_arrow/style.css" />
-        <link rel="stylesheet" type="text/css" href="style/header.css" />
-        <link rel="stylesheet" type="text/css" href="style/main.css" />
-        <link rel="stylesheet" type="text/css" href="style/gallery-management.css" />
-        <link rel="stylesheet" type="text/css" href="style/reset.css" />
-        <link rel="stylesheet" type="text/css" href="style/rectangle.css" />
-        <link rel="stylesheet" type="text/css" href="style/fonts.css" />
-        <link rel="stylesheet" type="text/css" href="style/body.css" />
-        <link rel="stylesheet" type="text/css" href="style/gallery.css" />
-        <link rel="stylesheet" type="text/css" href="style/description-items.css" />
-        <link rel="stylesheet" type="text/css" href="style/option.css" />
 
-        <link rel="stylesheet" type="text/css" href="style/editing-form.css" />
+        <title>Gallery</title>
+
+        <link rel="stylesheet" type="text/css" href="style/icomoon.css"/>
+        <link rel="stylesheet" type="text/css" href="style/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="style/title.css"/>
+        <link rel="stylesheet" type="text/css" href="style/option.css"/>
+        <link rel="stylesheet" type="text/css" href="style/add-form.css"/>
+        <link rel="stylesheet" type="text/css" href="style/body.css"/>
+        <link rel="stylesheet" type="text/css" href="style//main.css"/>
+        <link rel="stylesheet" type="text/css" href="style/loading-field.css"/>
+        <link rel="stylesheet" type="text/css" href="style/item-title.css"/>
+        <link rel="stylesheet" type="text/css" href="style/item-content.css"/>
+        <link rel="stylesheet" type="text/css" href="style/header.css"/>
+        <link rel="stylesheet" type="text/css" href="style/gallery.css"/>
+        <link rel="stylesheet" type="text/css" href="style/gallery-management.css"/>
+        <link rel="stylesheet" type="text/css" href="style/fonts.css"/>
+        <link rel="stylesheet" type="text/css" href="style/rectangle.css"/>
     </head>
     <body>
         <header class="header">
             <div class="header__title">
-                <h1>Gallery</h1>
+                <h1 class="title">Gallery</h1>
             </div>
+
             <div class="header__editing">
                 <div class="gallery-management">
-                    <button class="icon-plus gallery-management__button gallery-management__button-add-button" onclick="addPost()"></button>
-                    <button class="icon-calendar gallery-management__button gallery-management__button--sort-button" onclick="openSetOfSortButtons()"></button>
+                    <div class="icon-plus gallery-management__button gallery-management__button--add-button" onclick="openForm()"></div>
+                    <div class="icon-calendar gallery-management__button gallery-management__button--sort-button" onclick="openSetOfSortButtons()"></div>
                     <div class="gallery-management__sort-options">
                         <input type="date" class="option__sort option__sort--sorting-conditions"/>
-                        <div class="icon-checkmark option__sort option__sort--execute" onclick="sortPosts()"></div>
+                        <div class="option__sort option__sort--execute" onclick="sortPosts()">Sort</div>
                     </div>
-                    <button class="icon-bin gallery-management__button gallery-management__button--delete-button" onclick="openSetOfDeleteButtons()"></button>
-
+                    <div class="icon-bin gallery-management__button gallery-management__button--delete-button" onclick="openSetOfDeleteButtons()"></div>
                     <div class="gallery-management__delete-options">
                         <div class="option__delete option__delete--selected" onclick="deletePost()">Selected</div>
                         <div class="option__delete option__delete--all" onclick="deleteAllPosts()">All</div>
                     </div>
                 </div>
             </div>
-        </header>
-        <main class="main">
-            <section class="main__listOfPosts">
-                <div class="gallery">
-                </div>
-            </section>
-<!-- Все плохо с BEM -->
-            <section class="main__list-editing">
-                <div class="rectangle">
-                </div>
-                <form class="editing-form">
-                    <div class="icon-cross editing-form__close-form" onclick="closeForm()"></div>
 
-                    <h1 class="editing-form__title">Add new post</h1>
-                    <div class="editing-form__upload-picture">
-                        <label class="upload-description" for="file-upload">Choose picture to upload</label>
-                        <input class="upload-input" type="file" id="file-upload" name="file-upload">
+            <div class="icon-paragraph-justify header__menu-button" onclick="openMenu()"></div>
+        </header>
+
+        <main class="main">
+            <section class="main__list-of-posts">
+                <div class="gallery"></div>
+            </section>
+
+            <section class="main__additing-post">
+                <div class="rectangle"></div>
+                <form class="add-form">
+                    <div class="icon-cross add-form__close-button" onclick="closeForm()"></div>
+                    <h1 class="add-form__title">Add new post</h1>
+                    <div class="add-form__upload-picture">
+                        <label class="loading-field__description" for="file-upload">Choose picture to upload</label>
+                        <input class="loading-field__input" type="file" id="file-upload" name="file-upload">
                     </div>
-                    <div class="preview">
-                    </div>
-                    <input class="editing-form__information editing-form__information--author" type="text" placeholder="Your name">
-                    <textarea class="editing-form__information editing-form__information--description" placeholder="Comment"></textarea>
-                    <button type="submit" class="icon-checkmark editing-form__submit-post" disabled = true></button>
+                    <div class="add-form__preview"></div>
+                    <input class="add-form__information add-form__information--author" type="text" placeholder="Your name">
+                    <textarea class="add-form__information add-form__information--description" placeholder="Comment"></textarea>
+                    <button type="submit" class="icon-checkmark add-form__submit-post" disabled = true></button>
                 </form>
             </section>
         </main>
-        <script src="onclick.js"></script>
-        <script src="date_format.js"></script>
-        <script src="uploadPicture.js"></script>
-        <script src="indexedDB.js"></script>
-        <script src="openSetOfButtons.js"></script>
-        <script src="sortPosts.js"></script>
 
+        <script src="app/dateFormat.js"></script>
+        <script src="app/formVisibility.js"></script>
+        <script src="app/indexedDB.js"></script>
+        <script src="app/openMenu.js"></script>
+        <script src="app/openSetOfButtons.js"></script>
+        <script src="app/showDesciption.js"></script>
+        <script src="app/sortPosts.js"></script>
+        <script src="app/uploadPicture.js"></script>
+        <!-- <script src="dateFormat.js"></script>
+        <script src="formVisibility.js"></script>
+        <script src="indexedDB.js"></script>
+        <script src="openMenu.js"></script>
+        <script src="openSetOfButtons.js"></script>
+        <script src="showDesciption.js"></script>
+        <script src="sortPosts.js"></script>
+        <script src="uploadPicture.js"></script> -->
     </body>
 </html>

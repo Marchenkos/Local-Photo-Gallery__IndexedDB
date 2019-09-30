@@ -1,19 +1,50 @@
 .header {
-    height: 80px;
+    height: 100px;
     background: white;
     display: flex;
     align-items: flex-end;
-    padding: 0 20px 20px 0;
+    box-sizing: border-box;
+    padding: 0 45px 20px 0;
 }
 .header .header__title {
     text-align: end;
     font-size: 45px;
     color: #4e4e4e;
-    flex-basis: 50%;
+    flex-basis: 55%;
     font-family: Literata Book;
 }
 .header .header__editing {
-    flex-basis: 50%;
     display: flex;
     justify-content: flex-end;
+    flex-basis: 45%;
+}
+.header .header__menu-button {
+    display: none;
+}
+
+@media (max-width: 840px) {
+    .header {
+       padding: 20px 40px;
+    }
+    .header .header__title {
+        flex-basis: 0;
+        text-align: center;
+        flex-grow: 1;
+    }
+    .header .header__editing {
+        display: none;
+        position: absolute;
+        top: 33px;
+        left: 5px;
+        background: white;
+        width: 406px;
+        padding: 20px 35px;
+    }
+    .header .header__menu-button {
+        display: block;
+        z-index: 1;
+        font-size: 25px;
+        color: #4e4e4e;
+        flex-grow: 0;
+    }
 }

@@ -2,13 +2,18 @@ function showDesciption(id) {
     let parent = document.getElementById(id);
     let picture = parent.getElementsByClassName("item__picture")[0];
     let description = parent.getElementsByClassName("item__description")[0];
+    let options = document.querySelector(".gallery-management__delete-options");
+    console.log(options.style.display);
+    const style = window.getComputedStyle(options);
 
-    if (description.style.display == "none") {
-        picture.style.opacity = "0.5";
-        description.style.display = "block";
-    } else {
-        picture.style.opacity = "1";
-        description.style.display = "none";
+    if(style.getPropertyValue("display") == "none") {
+        if (description.style.display == "none") {
+            picture.style.opacity = "0.5";
+            description.style.display = "block";
+        } else {
+            picture.style.opacity = "1";
+            description.style.display = "none";
+        }
     }
 }
 

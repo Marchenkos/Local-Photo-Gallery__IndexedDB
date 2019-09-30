@@ -1,31 +1,24 @@
 .editing-form {
     width: 550px;
-    /* height: auto; */
     position: absolute;
     z-index: 1;
     top: 15px;
-    /* left: -46px; */
-    display: flex;
-    flex-direction: column;
+    left: -46px;
     background: white;
     text-align: center;
     padding: 40px 0;
-    /* box-sizing: border-box; */
+    font-family: Literata Book;
 }
 .editing-form .editing-form__title {
     font-size: 30px;
-    margin-bottom: 20px;
-    font-family: Literata Book;
 }
 .editing-form .editing-form__information {
     width: 70%;
     height: 30px;
     margin: 20px auto 0;
-    /* margin-bottom: 20px; */
     padding-left: 10px;
 }
 .editing-form .editing-form__information::placeholder{
-    font-family: Literata Book;
     font-size: 17px;
 }
 .editing-form .editing-form__information.editing-form__information--description{
@@ -36,32 +29,21 @@
     opacity: 0;
 }
 .editing-form .editing-form__upload-picture {
-
-height: 33px;
-
-padding: 9px 8px 0 8px;
-
-background: rgb(65, 65, 65);
-
-font-size: 19px;
-
-font-family: Literata Book;
-
-width: 200px;
-
-color: rgb(255, 255, 255);
-
-margin: 20px auto;
+    padding-top: 15px;
+    background: rgb(65, 65, 65);
+    font-size: 19px;
+    width: 220px;
+    color: rgb(255, 255, 255);
+    margin: 30px auto;
 }
 .preview {
     max-width: 100px;
     margin: 0 auto;
 }
-
 .editing-form .editing-form__submit-post{
     font-size: 35px;
     color:#a8a8a8;
-    margin: 50px 0 0 500px;
+    margin: 50px 0 0 470px;
     border: none;
     cursor: pointer;
     background: none;
@@ -70,6 +52,22 @@ margin: 20px auto;
     color: #5e5e5e;
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 25px;
+    font-size: 20px;
     cursor: pointer;
+}
+
+@media (max-width: 840px){
+    .editing-form .editing-form__information {
+        width: 60%;
+        height: 50px;
+        margin: 20px auto 0;
+        padding-left: 10px;
+    }
+    .editing-form {
+        width: 500px;
+    }
+    .editing-form .editing-form__submit-post{
+        margin: 50px 0 0 420px;
+    }
 }

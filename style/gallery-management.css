@@ -7,16 +7,11 @@
     background: #ffffff;
     color: #686868;
     cursor: pointer;
-    margin-left:15px;
+    margin-right: 15px;
 }
 .gallery-management .gallery-management__delete-options{
     display: none;
 }
-.gallery-management__delete-options .option {
-    font-size: 18px;
-    border: none;
-    background: #ffffff;
-    color: #686868;
-    cursor: pointer;
-    margin-left:10px;
+.gallery-management .gallery-management__sort-options{
+    display: none;
 }

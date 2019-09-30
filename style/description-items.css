@@ -1,0 +1,19 @@
+.description-items__author{
+    margin-top: 10px;
+    text-align: right;
+}
+
+.description-items__open-description{
+display: none;
+}
+
+@media (max-width: 840px){
+    .description-items__open-description{
+        display: block;
+        position: absolute;
+        top: 20px;
+        font-size: 25px;
+        color: #3d3d3d;
+        right: 20px;
+    }
+}

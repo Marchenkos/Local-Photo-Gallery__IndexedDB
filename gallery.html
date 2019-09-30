@@ -14,6 +14,9 @@
         <link rel="stylesheet" type="text/css" href="style/fonts.css" />
         <link rel="stylesheet" type="text/css" href="style/body.css" />
         <link rel="stylesheet" type="text/css" href="style/gallery.css" />
+        <link rel="stylesheet" type="text/css" href="style/description-items.css" />
+        <link rel="stylesheet" type="text/css" href="style/option.css" />
+
         <link rel="stylesheet" type="text/css" href="style/editing-form.css" />
     </head>
     <body>
@@ -24,12 +27,16 @@
             <div class="header__editing">
                 <div class="gallery-management">
                     <button class="icon-plus gallery-management__button gallery-management__button-add-button" onclick="addPost()"></button>
-                    <button class="icon-calendar gallery-management__button gallery-management__button--sort-button"></button>
-                    <button class="icon-bin gallery-management__button gallery-management__button--delete-button" onclick="openSetOfButtons()"></button>
+                    <button class="icon-calendar gallery-management__button gallery-management__button--sort-button" onclick="openSetOfSortButtons()"></button>
+                    <div class="gallery-management__sort-options">
+                        <input type="date" class="option__sort option__sort--sorting-conditions"/>
+                        <div class="icon-checkmark option__sort option__sort--execute" onclick="sortPosts()"></div>
+                    </div>
+                    <button class="icon-bin gallery-management__button gallery-management__button--delete-button" onclick="openSetOfDeleteButtons()"></button>
 
                     <div class="gallery-management__delete-options">
-                        <button class="option option--delete-selected" onclick="deletePost()">Selected</button>
-                        <button class="option option--delete-all" onclick="deleteAllPosts()">All</button>
+                        <div class="option__delete option__delete--selected" onclick="deletePost()">Selected</div>
+                        <div class="option__delete option__delete--all" onclick="deleteAllPosts()">All</div>
                     </div>
                 </div>
             </div>
@@ -60,9 +67,11 @@
             </section>
         </main>
         <script src="onclick.js"></script>
+        <script src="date_format.js"></script>
         <script src="uploadPicture.js"></script>
         <script src="indexedDB.js"></script>
         <script src="openSetOfButtons.js"></script>
+        <script src="sortPosts.js"></script>
 
     </body>
 </html>

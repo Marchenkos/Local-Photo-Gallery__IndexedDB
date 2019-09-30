@@ -1,7 +1,17 @@
 .main .main__list-editing {
     position: fixed;
-    top: 100px;
-    margin: 0 auto;
+    top: 200px;
     display: none;
-    left: 29%;
+    left: 35%;
+}
+
+@media (min-width: 840px) and (max-width: 1200px){
+    .main .main__list-editing {
+        left: 27%;
+    }
+}
+@media (max-width: 840px){
+    .main .main__list-editing {
+        left: 20%;
+    }
 }

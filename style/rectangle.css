@@ -2,7 +2,13 @@
     background: #414141;
     transform: rotate(45deg);
     width: 450px;
-    margin-left: 43px;
+    margin-left: 5px;
     margin-top: 15px;
     height: 450px;
+}
+
+@media (max-width: 840px){
+    .rectangle {
+      display: none;
+    }
 }

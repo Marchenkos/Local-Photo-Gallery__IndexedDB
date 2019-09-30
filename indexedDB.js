@@ -38,11 +38,11 @@ function addData(e) {
     e.preventDefault();
     let oMyBlob = new Blob(currentFile, {type : 'image/jpeg'});
     let date = new Date();
-    let newPost = { author: author.value, link: oMyBlob, description: description.value, date: date.toDateString()};
+    let newPost = { author: author.value, link: oMyBlob, description: description.value, date: date.toShortFormat()};
     let transaction = db.transaction(["gallery_db"], "readwrite");
     let objectStore = transaction.objectStore("gallery_db");
   
-    var request = objectStore.add(newPost);
+    let request = objectStore.add(newPost);
     request.onsuccess = function() {
         author.value = '';
         description.value = '';
@@ -76,6 +76,9 @@ function displayPosts() {
             let description = document.createElement("div");
             let author = document.createElement("h1");
             let checkButton = document.createElement("input");
+            let openDescriptionButton = document.createElement("div");
+            openDescriptionButton.classList.add("icon-flickr");
+            openDescriptionButton.classList.add("description-items__open-description");
             checkButton.classList.add("item__checking");
             checkButton.type = "checkbox";
             let idForCheckbox = "checkbox" + cursor.value.id;
@@ -85,6 +88,7 @@ function displayPosts() {
             post.classList.add("gallery__item");
             image.classList.add("item__picture");
             description.classList.add("item__description");
+            author.classList.add("description-items__author");
             let imgURL = window.URL.createObjectURL(cursor.value.link);
             image.src = imgURL;
             post.setAttribute("id", cursor.value.id);
@@ -94,6 +98,7 @@ function displayPosts() {
             post.appendChild(image);
             post.appendChild(description);
             post.appendChild(checkButton);
+            post.appendChild(openDescriptionButton);
             gallery.appendChild(post);
             let paramId = cursor.value.id;
             post.addEventListener("click", function() {
@@ -104,7 +109,6 @@ function displayPosts() {
 
         } 
         console.log("Posts all displayed");
-        document.querySelector(".preview").innerHTML = "";
     }
 }
 

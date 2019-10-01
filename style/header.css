@@ -47,7 +47,7 @@
         color: #686868;
         flex-grow: 0;
     }
-    .header .header__editing.header__editing--mobile{
+    .header .header__editing.header__editing--mobile {
         display: flex;
         justify-content: flex-start;
     }

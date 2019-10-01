@@ -1,6 +1,6 @@
 .header {
     height: 100px;
-    background: white;
+    background: #ffffff;
     display: flex;
     align-items: flex-end;
     box-sizing: border-box;
@@ -36,7 +36,7 @@
         position: absolute;
         top: 28px;
         left: 5px;
-        background: white;
+        background: #ffffff;
         width: 406px;
         padding: 20px 35px;
     }

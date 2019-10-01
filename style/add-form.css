@@ -1,7 +1,7 @@
 .add-form {
     width: 550px;
     position: absolute;
-    background: white;
+    background: #ffffff;
     text-align: center;
     padding: 40px 0;
     font-family: Literata Book;
@@ -24,10 +24,10 @@
 }
 .add-form .add-form__upload-picture {
     padding-top: 15px;
-    background: rgb(65, 65, 65);
+    background: #414141;
     font-size: 19px;
     width: 247px;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     margin: 16px auto;
 }
 .add-form .add-form__preview {

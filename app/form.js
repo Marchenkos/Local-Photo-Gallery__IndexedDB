@@ -5,14 +5,20 @@ window.onload = function() {
     input.addEventListener("change", updateImageDisplay);
 }
 
+function openForm() {
+    let form = document.querySelector(".main__additing-post");
+    form.style.display = "block";
+}
+
+function closeForm() {
+    let form = document.querySelector(".main__additing-post");
+    form.style.display = "none";
+}
+
 function updateImageDisplay() {
     let preview = document.querySelector(".add-form__preview");
     let submitButton = document.querySelector(".add-form__submit-post");
     let currentFile = input.files;
-
-    while(preview.firstChild) {
-        preview.removeChild(preview.firstChild);
-    }
 
     if (currentFile.length == 0) {
         let warning = document.createElement("p");
@@ -28,4 +34,3 @@ function updateImageDisplay() {
         submitButton.disabled = false;
     }
 }
-

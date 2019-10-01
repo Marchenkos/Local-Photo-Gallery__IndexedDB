@@ -43,6 +43,7 @@ function addData(e) {
     request.onsuccess = function() {
         author.value = '';
         description.value = '';
+        displayPosts();
     };
 
     transaction.oncomplete = function() {
@@ -52,51 +53,113 @@ function addData(e) {
     transaction.onerror = function() {
         console.log('Transaction not opened due to error');
     };
-
-    displayPosts();
 }
 
-function displayPosts() {
-    while(gallery.firstChild) {
-        gallery.removeChild(gallery.firstChild);
+function clearDisplay(root) {
+    while(root.firstChild) {
+        root.removeChild(root.firstChild);
     }
+}
 
+function getData() {
+    let allData = [];
     let objectStore = db.transaction("gallery_db").objectStore("gallery_db");
 
     objectStore.openCursor().onsuccess = function(e) {
         let cursor = e.target.result;
 
         if(cursor) {
-            let post = document.createElement("div");
-            let image = document.createElement('img');
-            let description = document.createElement("div");
-            let author = document.createElement("h1");
-            let checkButton = document.createElement("input");
-            let imgURL = window.URL.createObjectURL(cursor.value.link);
-            let currentId = cursor.value.id;
-            checkButton.classList.add("item-content__checking");
-            checkButton.type = "checkbox";
-            checkButton.setAttribute("id", "checkbox" + cursor.value.id);
-            post.classList.add("gallery__item");
-            image.classList.add("item-content__picture");
-            description.classList.add("item-content__description");
-            author.classList.add("item-title__author");
-            image.src = imgURL;
-            post.setAttribute("id", cursor.value.id);
-            author.textContent = cursor.value.author;
-            description.textContent = cursor.value.description;
-            description.appendChild(author);
-            post.appendChild(image);
-            post.appendChild(description);
-            post.appendChild(checkButton);
-            gallery.appendChild(post);
-            post.addEventListener("click", function() {
-                showDesciption(currentId);
-            }, false);
-
+            let data = {
+                id: cursor.value.id,
+                author: cursor.value.author,
+                link: cursor.value.link,
+                description: cursor.value.description,
+                date: cursor.value.date
+            };
+            allData.push(data);
             cursor.continue();
         }
-
-        console.log("Posts all displayed");
     }
+
+    return allData;
 }
+
+function displayPosts() {
+    clearDisplay(gallery);
+    let allData = getData();
+
+    for(data of allData) {
+        let post = document.createElement("div");
+        let image = document.createElement('img');
+        let description = document.createElement("div");
+        let author = document.createElement("h1");
+        let checkButton = document.createElement("input");
+        let imgURL = window.URL.createObjectURL(data.link);
+        checkButton.classList.add("item-content__checking");
+        checkButton.type = "checkbox";
+        checkButton.setAttribute("id", "checkbox" + data.id);
+        post.classList.add("gallery__item");
+        image.classList.add("item-content__picture");
+        description.classList.add("item-content__description");
+        author.classList.add("item-title__author");
+        image.src = imgURL;
+        post.setAttribute("id", data.id);
+        author.textContent = data.author;
+        description.textContent = data.description;
+        description.appendChild(author);
+        post.appendChild(image);
+        post.appendChild(description);
+        post.appendChild(checkButton);
+        gallery.appendChild(post);
+        post.addEventListener("click", function() {
+            showDesciption(data.id);
+        }, false);
+    }
+
+    console.log("Posts all displayed");
+}
+
+// function displayPosts() {
+//     while(gallery.firstChild) {
+//         gallery.removeChild(gallery.firstChild);
+//     }
+
+//     let objectStore = db.transaction("gallery_db").objectStore("gallery_db");
+
+//     objectStore.openCursor().onsuccess = function(e) {
+//         let cursor = e.target.result;
+
+//         if(cursor) {
+//             let post = document.createElement("div");
+//             let image = document.createElement('img');
+//             let description = document.createElement("div");
+//             let author = document.createElement("h1");
+//             let checkButton = document.createElement("input");
+//             let imgURL = window.URL.createObjectURL(cursor.value.link);
+//             let currentId = cursor.value.id;
+//             checkButton.classList.add("item-content__checking");
+//             checkButton.type = "checkbox";
+//             checkButton.setAttribute("id", "checkbox" + cursor.value.id);
+//             post.classList.add("gallery__item");
+//             image.classList.add("item-content__picture");
+//             description.classList.add("item-content__description");
+//             author.classList.add("item-title__author");
+//             image.src = imgURL;
+//             post.setAttribute("id", cursor.value.id);
+//             author.textContent = cursor.value.author;
+//             description.textContent = cursor.value.description;
+//             description.appendChild(author);
+//             post.appendChild(image);
+//             post.appendChild(description);
+//             post.appendChild(checkButton);
+//             gallery.appendChild(post);
+//             post.addEventListener("click", function() {
+//                 showDesciption(currentId);
+//             }, false);
+
+//             cursor.continue();
+//         }
+
+//         console.log("Posts all displayed");
+//     }
+// }

@@ -1,8 +1,15 @@
+function openMenu() {
+    let menu = document.querySelector(".header__editing");
+    menu.classList.toggle("header__editing--mobile");
+}
+
 function openSetOfDeleteButtons(){
     let sortOptions = document.querySelector(".gallery-management__sort-options");
     let options = document.querySelector(".gallery-management__delete-options");
     let checkboxes = document.querySelectorAll(".item-content__checking");
     let deleteButton = document.querySelector(".gallery-management__button--delete-button");
+    deleteButton.classList.toggle("icon-arrow-right");
+    deleteButton.classList.toggle("icon-bin");
 
     if (options.style.display == "none") {
         [].forEach.call(checkboxes, checkboxe => {
@@ -13,9 +20,7 @@ function openSetOfDeleteButtons(){
             openSetOfSortButtons();
         }
 
-        deleteButton.classList.remove("icon-bin");
         deleteButton.style.marginRight = "0px";
-        deleteButton.classList.add("icon-arrow-right");
         options.style.display = "flex";
         options.style.alignItems = "flex-end";
     } else {
@@ -23,8 +28,6 @@ function openSetOfDeleteButtons(){
             checkboxe.style.display = "none";
         });
 
-        deleteButton.classList.add("icon-bin");
-        deleteButton.classList.remove("icon-arrow-right");
         options.style.display = "none";
     }
 }

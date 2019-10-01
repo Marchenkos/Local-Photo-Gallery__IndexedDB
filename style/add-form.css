@@ -20,7 +20,7 @@
 }
 .add-form .add-form__information.add-form__information--description{
     padding-top:6px;
-    height: 80px;
+    height: 55px;
 }
 .add-form .add-form__upload-picture {
     padding-top: 15px;
@@ -54,11 +54,12 @@
 @media (max-width: 840px) {
     .add-form {
         width: 450px;
+        padding: 40px 0 15px;
     }
     .add-form .add-form__information {
         width: 60%;
-        height: 50px;
-        margin: 32px auto 0;
+        height: 35px;
+        margin: 20px auto 0;
         padding-left: 10px;
     }
     .add-form .add-form__submit-post {

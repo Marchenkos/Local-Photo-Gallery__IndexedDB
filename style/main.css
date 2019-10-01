@@ -10,5 +10,6 @@
 @media (max-width: 840px) {
     .main .main__additing-post {
         margin-left: -227px;
+        top: 115px;
     }
 }

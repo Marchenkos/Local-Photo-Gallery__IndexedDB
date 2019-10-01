@@ -8,7 +8,7 @@ function sortPosts() {
         let cursor = e.target.result;
 
         if(cursor) {
-            if(String(condition) != String(cursor.value.date)) {
+            if(condition != cursor.value.date) {
                 let id = cursor.value.id;
 
                 [].forEach.call(posts, post => {

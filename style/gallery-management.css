@@ -7,11 +7,11 @@
     cursor: pointer;
     margin-right: 25px;
 }
-.gallery-management .gallery-management__button.gallery-management__button--delete-button {
-    margin-right: 0px;
-}
 .gallery-management .gallery-management__delete-options {
     display: none;
+}
+.gallery-management .gallery-management__button.gallery-management__button--delete-button {
+    margin-right: 0px;
 }
 .gallery-management .gallery-management__sort-options {
     display: none;

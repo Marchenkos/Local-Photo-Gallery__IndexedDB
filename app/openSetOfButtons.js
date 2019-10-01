@@ -22,6 +22,7 @@ function openSetOfDeleteButtons(){
         [].forEach.call(checkboxes, checkboxe => {
             checkboxe.style.display = "none";
         });
+
         deleteButton.classList.add("icon-bin");
         deleteButton.classList.remove("icon-arrow-right");
         options.style.display = "none";

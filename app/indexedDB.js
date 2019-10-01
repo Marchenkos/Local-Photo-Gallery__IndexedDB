@@ -95,58 +95,8 @@ function displayPosts() {
             }, false);
 
             cursor.continue();
-
         }
 
         console.log("Posts all displayed");
     }
-}
-
-function deleteAllPosts() {
-    let require = db.transaction(["gallery_db"], "readwrite")
-    .objectStore("gallery_db")
-    .clear();
-
-    require.onsuccess = function () {
-        console.log("Deleted database successfully");
-    };
-
-    require.onerror = function () {
-        console.log("Couldn't delete database");
-    };
-
-    require.onblocked = function () {
-        console.log("Couldn't delete database due to the operation being blocked");
-    };
-
-    gallery.innerHTML = "";
-}
-
-function deletePost() {
-    let posts = document.querySelectorAll(".gallery__item");
-
-    [].forEach.call(posts, post => {
-        let checking = post.querySelector(".item-content__checking");
-        let objectStore = db.transaction(["gallery_db"], "readwrite").objectStore("gallery_db");
-
-        if(checking.checked) {
-            objectStore.openCursor().onsuccess = function(e) {
-                let cursor = e.target.result;
-    
-                if(cursor) {
-                   if(post.id == cursor.value.id) {
-                       console.log(post.id == cursor.value.id);
-                       let request = cursor.delete();
-                       request.onsuccess = function () {
-                           console.log("Delete is success");
-                       };
-                    }
-
-                    cursor.continue();
-                }
-            }
-        }
-    });
-
-    displayPosts();
 }

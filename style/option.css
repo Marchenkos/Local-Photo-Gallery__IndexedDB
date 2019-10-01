@@ -34,8 +34,9 @@
 .option__sort.option__sort--sorting-conditions::-webkit-calendar-picker-indicator {
     opacity: 0;
 }
+
 @media (max-width: 840px) {
-    .option__sort.option__sort--execute{
+    .option__sort.option__sort--execute {
         font-size: 25px;
         margin-right: 10px;
     }

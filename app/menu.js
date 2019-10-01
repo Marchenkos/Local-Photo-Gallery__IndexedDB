@@ -20,7 +20,7 @@ function openSetOfDeleteButtons(){
             openSetOfSortButtons();
         }
 
-        deleteButton.style.marginRight = "0px";
+        deleteButton.style.marginRight = "";
         options.style.display = "flex";
         options.style.alignItems = "flex-end";
     } else {

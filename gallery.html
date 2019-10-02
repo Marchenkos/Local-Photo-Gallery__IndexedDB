@@ -30,21 +30,21 @@
 
             <div class="header__editing">
                 <div class="gallery-management">
-                    <div class="icon-plus gallery-management__button gallery-management__button--add-button" onclick="openForm()"></div>
-                    <div class="icon-calendar gallery-management__button gallery-management__button--sort-button" onclick="openSetOfSortButtons()"></div>
+                    <div class="icon-plus gallery-management__button gallery-management__button--add-button"></div>
+                    <div class="icon-calendar gallery-management__button gallery-management__button--sort-button"></div>
                     <div class="gallery-management__sort-options">
                         <input type="date" class="option__sort option__sort--sorting-conditions"/>
-                        <div class="option__sort option__sort--execute" onclick="sortPosts()">Sort</div>
+                        <div class="option__sort option__sort--execute">Sort</div>
                     </div>
-                    <div class="icon-bin gallery-management__button gallery-management__button--delete-button" onclick="openSetOfDeleteButtons()"></div>
+                    <div class="icon-bin gallery-management__button gallery-management__button--delete-button"></div>
                     <div class="gallery-management__delete-options">
-                        <div class="option__delete option__delete--selected" onclick="selectAll()">Select all</div>
-                        <div class="icon-bin option__delete option__delete--all" onclick="deletePosts()"></div>
+                        <div class="option__delete option__delete--selected">Select all</div>
+                        <div class="icon-bin option__delete option__delete--all"></div>
                     </div>
                 </div>
             </div>
 
-            <div class="icon-paragraph-justify header__menu-button" onclick="openMenu()"></div>
+            <div class="icon-paragraph-justify header__menu-button"></div>
         </header>
 
         <main class="main">
@@ -55,7 +55,7 @@
             <section class="main__additing-post">
                 <div class="rectangle"></div>
                 <form class="add-form">
-                    <div class="icon-cross add-form__close-button" onclick="closeForm()"></div>
+                    <div class="icon-cross add-form__close-button"></div>
                     <h1 class="add-form__title">Add new post</h1>
                     <div class="add-form__upload-picture">
                         <label class="loading-field__description" for="file-upload">Choose picture to upload</label>
@@ -74,5 +74,6 @@
         <script src="app/indexedDB.js"></script>
         <script src="app/menu.js"></script>
         <script src="app/posts.js"></script>
+        <script src="app/onload.js"></script>
     </body>
 </html>

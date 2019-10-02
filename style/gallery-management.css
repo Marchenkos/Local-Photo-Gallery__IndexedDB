@@ -10,17 +10,14 @@
 .gallery-management .gallery-management__delete-options {
     display: none;
 }
-.gallery-management .gallery-management__button.gallery-management__button--delete-button {
-    margin-right: 0px;
-}
 .gallery-management .gallery-management__sort-options {
     display: none;
 }
+.gallery-management .gallery-management__button.gallery-management__button--delete-button {
+    margin-right: 0px;
+}
 @media (max-width: 840px){
     .gallery-management .gallery-management__button {
-        font-size: 32px;
-        color: #686868;
-        cursor: pointer;
         margin-right: 15px;
     }
 }

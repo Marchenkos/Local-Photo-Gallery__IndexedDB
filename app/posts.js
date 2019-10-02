@@ -35,7 +35,7 @@ window.posts = (function () {
             return checkedPosts;
         },
         displayPosts(allData) {
-            clearDisplay();
+            posts.clearDisplay();
         
             for(data of allData) {
                 let post = document.createElement("div");
@@ -60,8 +60,9 @@ window.posts = (function () {
                 post.appendChild(description);
                 post.appendChild(checkButton);
                 gallery.appendChild(post);
+                let idForEvent = data.id;
                 post.addEventListener("click", function() {
-                    showDesciption(data.id);
+                    posts.showDesciption(idForEvent);
                 }, false);
             }
         

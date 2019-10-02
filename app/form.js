@@ -1,4 +1,4 @@
-window.form = (function() {
+window.form = (function () {
     return {
         openForm() {
             let form = document.querySelector(".main__additing-post");
@@ -6,9 +6,12 @@ window.form = (function() {
         },
         closeForm() {
             let form = document.querySelector(".main__additing-post");
+            let preview = document.querySelector(".add-form__preview");
+            preview.removeChild(preview.firstChild);
             form.style.display = "none";
         },
         updatePreviewField() {
+            let input = document.getElementById("file-upload");
             let preview = document.querySelector(".add-form__preview");
             let submitButton = document.querySelector(".add-form__submit-post");
             let currentFile = input.files;

@@ -12,7 +12,6 @@ window.menu = (function () {
         },
         delete(getSelected, deletePosts) {
             let checkedElements = getSelected();
-
             deletePosts(checkedElements);
         },
         openMenu() {

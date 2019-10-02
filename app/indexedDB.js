@@ -1,31 +1,27 @@
 window.db = (function() {
     let database;
+    let request = window.indexedDB.open("gallery_db", 1);
+
+    request.onerror = () => {
+        console.log("DB failed to open");
+    }
+
+    request.onsuccess = () => {
+        console.log("DB opened successfully");
+        database = request.result;
+    }
+
+    request.onupgradeneeded = function(e) {
+        let database = e.target.result;
+        let objectStore = database.createObjectStore("gallery_db", {keyPath: "id", autoIncrement: true});
+        objectStore.createIndex("author", "author", {unique:false});
+        objectStore.createIndex("link", "link", {unique:false});
+        objectStore.createIndex("description", "description", {unique:false});
+        objectStore.createIndex("date", "date", {unique:false});
+    }
+
     return {
-        createDB(displayDate) {
-            let form = document.querySelector(".add-form");
-            let request = window.indexedDB.open("gallery_db", 1);
-            form.onsubmit = addData;
-        
-            request.onerror = () => {
-                console.log("DB failed to open");
-            }
-        
-            request.onsuccess = () => {
-                console.log("DB opened successfully");
-                database = request.result;
-                displayDate();
-            }
-        
-            request.onupgradeneeded = function(e) {
-                let database = e.target.result;
-                let objectStore = database.createObjectStore("gallery_db", {keyPath: "id", autoIncrement: true});
-                objectStore.createIndex("author", "author", {unique:false});
-                objectStore.createIndex("link", "link", {unique:false});
-                objectStore.createIndex("description", "description", {unique:false});
-                objectStore.createIndex("date", "date", {unique:false});
-            }
-        },
-        addData(update, displayPosts) {
+        addData() {
             let input = document.getElementById("file-upload");
             let currentFile = input.files;
             let author = document.querySelector(".add-form__information--author");
@@ -40,7 +36,6 @@ window.db = (function() {
             request.onsuccess = function() {
                 author.value = '';
                 description.value = '';
-                update(displayPosts);
             };
 
             transaction.oncomplete = function() {
@@ -68,12 +63,12 @@ window.db = (function() {
                     let cursor = e.target.result;
 
                     if(cursor) {
-                    if(element == cursor.value.id) {
-                        let request = cursor.delete();
+                        if(element == cursor.value.id) {
+                            let request = cursor.delete();
 
-                        request.onsuccess = function () {
-                            console.log("Delete is success");
-                        };
+                            request.onsuccess = function () {
+                                console.log("Delete is success");
+                            };
                         }
 
                         cursor.continue();

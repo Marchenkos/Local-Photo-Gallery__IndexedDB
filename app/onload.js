@@ -25,7 +25,7 @@ window.onload = function() {
         menu.onSelect(posts.selectAll);
     });
     sortButton.addEventListener("click", function() {
-        posts.onSort(menu.callback);
+        menu.onSort(posts.sortByDate);
     })
     openMenuButton.addEventListener("click", menu.openMenu);
     openSetOfSortButtons.addEventListener("click", function () {

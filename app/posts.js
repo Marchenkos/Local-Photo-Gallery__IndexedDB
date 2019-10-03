@@ -7,9 +7,8 @@ window.posts = (function () {
                 gallery.removeChild(gallery.firstChild);
             }
         },
-        onSort(callback) {
-            let inputDate = document.querySelector(".option__sort--sorting-conditions").value;
-            callback(inputDate);
+        sortByDate(inputdate) {
+            db.filterData(db.sortByDate.bind(inputdate), posts.deleteCurrentPost);
         },
         selectAll() {
             let posts = document.querySelectorAll(".gallery__item");

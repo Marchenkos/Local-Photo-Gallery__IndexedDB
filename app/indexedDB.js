@@ -85,7 +85,7 @@ window.db = (function() {
             let posts = document.querySelectorAll(".gallery__item");
             objectStore.openCursor().onsuccess = function(e) {
                 let cursor = e.target.result;
-        
+
                 if (cursor) {
                     if (predicate(cursor.value)) {
                         let id = cursor.value.id;

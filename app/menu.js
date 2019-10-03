@@ -3,9 +3,9 @@ window.menu = (function () {
         onAdd(callback) {
             callback();
         },
-        onSort(callback, deleteSelectedPost) {
+        onSort(callback, sort, deleteSelectedPost) {
             let inputDate = document.querySelector(".option__sort--sorting-conditions").value;
-            let predicate = db.sortByDate.bind(inputDate);
+            let predicate = sort.bind(inputDate);
             callback(predicate, deleteSelectedPost);
         },
         onSelect(callback) {

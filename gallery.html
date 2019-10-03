@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Gallery</title>
+
+        <link rel="stylesheet" type="text/css" href="style/icomoon.css"/>
+        <link rel="stylesheet" type="text/css" href="style/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="style/title.css"/>
+        <link rel="stylesheet" type="text/css" href="style/option.css"/>
+        <link rel="stylesheet" type="text/css" href="style/add-form.css"/>
+        <link rel="stylesheet" type="text/css" href="style/body.css"/>
+        <link rel="stylesheet" type="text/css" href="style//main.css"/>
+        <link rel="stylesheet" type="text/css" href="style/loading-field.css"/>
+        <link rel="stylesheet" type="text/css" href="style/item-title.css"/>
+        <link rel="stylesheet" type="text/css" href="style/item-content.css"/>
+        <link rel="stylesheet" type="text/css" href="style/header.css"/>
+        <link rel="stylesheet" type="text/css" href="style/gallery.css"/>
+        <link rel="stylesheet" type="text/css" href="style/gallery-management.css"/>
+        <link rel="stylesheet" type="text/css" href="style/fonts.css"/>
+        <link rel="stylesheet" type="text/css" href="style/rectangle.css"/>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__title">
+                <h1 class="title">Gallery</h1>
+            </div>
+
+            <div class="header__editing">
+                <div class="gallery-management">
+                    <div class="icon-plus gallery-management__button gallery-management__button--add-button"></div>
+                    <div class="icon-calendar gallery-management__button gallery-management__button--sort-button"></div>
+                    <div class="gallery-management__sort-options">
+                        <input type="date" class="option__sort option__sort--sorting-conditions"/>
+                        <div class="option__sort option__sort--execute">Sort</div>
+                    </div>
+                    <div class="icon-bin gallery-management__button gallery-management__button--delete-button"></div>
+                    <div class="gallery-management__delete-options">
+                        <div class="option__delete option__delete--selected">Select all</div>
+                        <div class="icon-bin option__delete option__delete--all"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="icon-paragraph-justify header__menu-button"></div>
+        </header>
+
+        <main class="main">
+            <section class="main__list-of-posts">
+                <div class="gallery"></div>
+            </section>
+
+            <section class="main__additing-post">
+                <div class="rectangle"></div>
+                <form class="add-form">
+                    <div class="icon-cross add-form__close-button"></div>
+                    <h1 class="add-form__title">Add new post</h1>
+                    <div class="add-form__upload-picture">
+                        <label class="loading-field__description" for="file-upload">Choose picture to upload</label>
+                        <input class="loading-field__input" type="file" id="file-upload" name="file-upload">
+                    </div>
+                    <div class="add-form__preview"></div>
+                    <input class="add-form__information add-form__information--author" type="text" placeholder="Your name">
+                    <textarea class="add-form__information add-form__information--description" placeholder="Comment"></textarea>
+                    <button type="submit" class="icon-checkmark add-form__submit-post" disabled = true></button>
+                </form>
+            </section>
+        </main>
+
+        <script src="app/dateUtility.js"></script>
+        <script src="app/form.js"></script>
+        <script src="app/indexedDB.js"></script>
+        <script src="app/menu.js"></script>
+        <script src="app/posts.js"></script>
+        <script src="app/onload.js"></script>
+    </body>
+</html>

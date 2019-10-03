@@ -1,0 +1,15 @@
+.main .main__additing-post {
+    position: fixed;
+    top: 200px;
+    z-index: 1;
+    display: none;
+    left: 50%;
+    margin-left: -271px;
+}
+
+@media (max-width: 840px) {
+    .main .main__additing-post {
+        margin-left: -227px;
+        top: 115px;
+    }
+}

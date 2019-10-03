@@ -1,0 +1,29 @@
+.item-content__picture {
+    max-width: 420px;
+    opacity: 1;
+}
+
+.item-content__description {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    height: inherit;
+    font-size: 20px;
+    top: 10px;
+    left: 8px;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.item-content__checking {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    zoom:2.5;
+    top: 5px;
+    left: 5px;
+}

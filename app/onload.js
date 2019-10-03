@@ -11,23 +11,21 @@ window.onload = function() {
     let deleteButton = document.querySelector(".option__delete--all");
     let closeForm = document.querySelector(".add-form__close-button");
     let formForAdd = document.querySelector(".add-form");
-    formForAdd.addEventListener("submit", function() {
-        db.addData();
-        db.getData(posts.displayPosts);
-    }, false); 
+
+    formForAdd.onsubmit = db.addData;
 
     input.addEventListener("change", form.updatePreviewField);
     closeForm.addEventListener("click", form.closeForm);
 
     deleteButton.addEventListener("click", function() {
-        menu.delete(posts.getSelected, db.deleteData);
+        menu.onDelete(posts.getSelected, db.deleteData);
         db.getData(posts.displayPosts);
     });
     selectButton.addEventListener("click", function() {
-        menu.select(posts.selectAll);
+        menu.onSelect(posts.selectAll);
     });
     sortButton.addEventListener("click", function() {
-        menu.sort(db.sortData);
+        menu.onSort(db.filterData, posts.deleteCurrentPost);
     })
     openMenuButton.addEventListener("click", menu.openMenu);
     openSetOfSortButtons.addEventListener("click", function () {
@@ -37,6 +35,6 @@ window.onload = function() {
         menu.openSetOfDeleteButtons(menu.openSetOfSortButtons);
     });
     addButton.addEventListener("click", function () {
-        menu.add(form.openForm);
+        menu.onAdd(form.openForm);
     });
 }

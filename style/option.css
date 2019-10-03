@@ -6,6 +6,7 @@
     cursor: pointer;
     margin-left: 10px;
 }
+
 .option__sort.option__sort--execute {
     font-size: 25px;
     float: left;
@@ -13,6 +14,7 @@
     margin-right: 15px;
     color: #686868;
 }
+
 .option__sort.option__sort--sorting-conditions {
     width: 130px;
     height: 20px;
@@ -24,13 +26,16 @@
     box-shadow: inset 0 3px 6px #0000001a;
     background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat;
 }
+
 .option__sort.option__sort--sorting-conditions::-webkit-inner-spin-button {
     display: none;
 }
+
 .option__sort.option__sort--sorting-conditions::-webkit-datetime-edit-fields-wrapper {
     font-family: Literata Book;
     font-size: 15px;
 }
+
 .option__sort.option__sort--sorting-conditions::-webkit-calendar-picker-indicator {
     opacity: 0;
 }
@@ -40,6 +45,7 @@
         font-size: 25px;
         margin-right: 10px;
     }
+
     .option__sort.option__sort--sorting-conditions {
         margin: 0 10px;
     }

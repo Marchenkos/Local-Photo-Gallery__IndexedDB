@@ -6,22 +6,27 @@
     padding: 40px 0;
     font-family: Literata Book;
 }
+
 .add-form .add-form__title {
     font-size: 30px;
 }
+
 .add-form .add-form__information {
     width: 70%;
     height: 30px;
     margin: 20px auto 0;
     padding-left: 10px;
 }
+
 .add-form .add-form__information::placeholder {
     font-size: 17px;
 }
+
 .add-form .add-form__information.add-form__information--description{
     padding-top:6px;
     height: 55px;
 }
+
 .add-form .add-form__upload-picture {
     padding-top: 15px;
     background: #414141;
@@ -30,10 +35,12 @@
     color: #ffffff;
     margin: 16px auto;
 }
+
 .add-form .add-form__preview {
     max-width: 100px;
     margin: 0 auto;
 }
+
 .add-form .add-form__submit-post {
     font-size: 35px;
     color:#a8a8a8;
@@ -42,6 +49,7 @@
     cursor: pointer;
     background: none;
 }
+
 .add-form .add-form__close-button {
     color: #5e5e5e;
     position: absolute;
@@ -56,15 +64,18 @@
         width: 450px;
         padding: 40px 0 15px;
     }
+
     .add-form .add-form__information {
         width: 60%;
         height: 35px;
         margin: 20px auto 0;
         padding-left: 10px;
     }
+
     .add-form .add-form__submit-post {
         margin: 50px 0 0 380px;
     }
+
     .add-form .add-form__upload-picture {
         width: 220px;
     }

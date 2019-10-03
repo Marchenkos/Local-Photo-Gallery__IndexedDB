@@ -21,7 +21,9 @@ window.db = (function() {
     }
 
     return {
-        addData() {
+        addData(e) {
+
+            e.preventDefault();
             let input = document.getElementById("file-upload");
             let currentFile = input.files;
             let author = document.querySelector(".add-form__information--author");
@@ -40,6 +42,7 @@ window.db = (function() {
 
             transaction.oncomplete = function() {
                 console.log('Transaction completed: database modification finished.');
+                db.getData(posts.displayPosts);
             };
 
             transaction.onerror = function() {
@@ -47,13 +50,14 @@ window.db = (function() {
             };
         },
         getData(callback) {
-            let transaction = database.transaction(["gallery_db"], "readwrite");
-            let objectStore = transaction.objectStore("gallery_db");
-            let request = objectStore.getAll();
-        
-            request.onsuccess = function() {
-                callback(request.result);
-            }
+                let transaction = database.transaction(["gallery_db"], "readwrite");
+                let objectStore = transaction.objectStore("gallery_db");
+                let request = objectStore.getAll();
+            
+                request.onsuccess = function() {
+                    callback(request.result);
+                }
+            
         },
         deleteData(checkedElements) {
             let objectStore = database.transaction(["gallery_db"], "readwrite").objectStore("gallery_db");
@@ -76,27 +80,27 @@ window.db = (function() {
                 }
             });
         },
-        sortData(condition) {
+        filterData(predicate, deleteSelectedPost) {
             let objectStore = database.transaction(["gallery_db"], "readwrite").objectStore("gallery_db");
-            let gallery = document.querySelector(".gallery");
             let posts = document.querySelectorAll(".gallery__item");
-        
             objectStore.openCursor().onsuccess = function(e) {
                 let cursor = e.target.result;
         
-                if(cursor) {
-                    if(condition != cursor.value.date) {
+                if (cursor) {
+                    if (predicate(cursor.value)) {
                         let id = cursor.value.id;
-        
-                        [].forEach.call(posts, post => {
-                            if(post.id == id) {
-                                gallery.removeChild(post);
-                            }
-                        });
+                        deleteSelectedPost(posts, id);
                     }
-        
+
                     cursor.continue();
                 }
+            }
+        },
+        sortByDate(posts) {
+            if(posts.date == this) {
+                return true;
+            } else {
+                return false;
             }
         }
     }

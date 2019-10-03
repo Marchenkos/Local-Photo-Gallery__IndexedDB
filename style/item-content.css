@@ -2,6 +2,7 @@
     max-width: 420px;
     opacity: 1;
 }
+
 .item-content__description {
     position: absolute;
     z-index: 1;
@@ -12,10 +13,12 @@
     left: 8px;
     overflow: scroll;
 }
+
 ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
 }
+
 .item-content__checking {
     position: absolute;
     z-index: 1;

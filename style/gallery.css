@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
 .gallery .gallery__item {
     position: relative;
     max-width: 440px;

@@ -36,8 +36,9 @@ window.posts = (function () {
         },
         displayPosts(allData) {
             posts.clearDisplay();
-        
+
             for(data of allData) {
+                console.log("display");
                 let post = document.createElement("div");
                 let image = document.createElement('img');
                 let description = document.createElement("div");
@@ -80,6 +81,13 @@ window.posts = (function () {
                 picture.style.opacity = "1";
                 description.style.display = "none";
             }
+        },
+        deleteCurrentPost(posts, id) {
+            [].forEach.call(posts, post => {
+                if(post.id == id) {
+                    gallery.removeChild(post);
+                }
+            });
         }
     }
 })()

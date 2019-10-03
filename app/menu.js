@@ -1,18 +1,19 @@
 window.menu = (function () {
     return {
-        add(openForm) {
-            openForm();
+        onAdd(callback) {
+            callback();
         },
-        sort(sortPosts) {
-            let condition = document.querySelector(".option__sort--sorting-conditions").value;
-            sortPosts(condition);
+        onSort(callback, deleteSelectedPost) {
+            let inputDate = document.querySelector(".option__sort--sorting-conditions").value;
+            let predicate = db.sortByDate.bind(inputDate);
+            callback(predicate, deleteSelectedPost);
         },
-        select(selectAllPosts) {
-            selectAllPosts();
+        onSelect(callback) {
+            callback();
         },
-        delete(getSelected, deletePosts) {
+        onDelete(getSelected, callback) {
             let checkedElements = getSelected();
-            deletePosts(checkedElements);
+            callback(checkedElements);
         },
         openMenu() {
             let menu = document.querySelector(".header__editing");

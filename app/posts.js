@@ -7,6 +7,10 @@ window.posts = (function () {
                 gallery.removeChild(gallery.firstChild);
             }
         },
+        onSort(callback) {
+            let inputDate = document.querySelector(".option__sort--sorting-conditions").value;
+            callback(inputDate);
+        },
         selectAll() {
             let posts = document.querySelectorAll(".gallery__item");
         

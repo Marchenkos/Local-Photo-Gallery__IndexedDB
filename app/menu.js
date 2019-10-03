@@ -3,10 +3,8 @@ window.menu = (function () {
         onAdd(callback) {
             callback();
         },
-        onSort(callback, sort, deleteSelectedPost) {
-            let inputDate = document.querySelector(".option__sort--sorting-conditions").value;
-            let predicate = sort.bind(inputDate);
-            callback(predicate, deleteSelectedPost);
+        callback(inputdate) {
+            db.filterData(db.sortByDate.bind(inputdate), posts.deleteCurrentPost);
         },
         onSelect(callback) {
             callback();

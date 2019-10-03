@@ -98,7 +98,8 @@ window.db = (function() {
         },
         sortByDate(posts) {
             if(posts.date == this) {
-                return true;
+                console.log("dghbtrdfhbdtfy");
+                return true
             } else {
                 return false;
             }

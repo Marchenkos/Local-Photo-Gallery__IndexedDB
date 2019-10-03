@@ -25,7 +25,7 @@ window.onload = function() {
         menu.onSelect(posts.selectAll);
     });
     sortButton.addEventListener("click", function() {
-        menu.onSort(db.filterData, db.sortByDate, posts.deleteCurrentPost);
+        posts.onSort(menu.callback);
     })
     openMenuButton.addEventListener("click", menu.openMenu);
     openSetOfSortButtons.addEventListener("click", function () {
